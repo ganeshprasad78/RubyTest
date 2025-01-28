@@ -33,10 +33,13 @@ def repeated_letters(value)
   dups
 end
 
-def fib(total)
-  fib_arr = [0, 1]
-  (1..total).each do |_i|
-    fib_arr.push(fib_arr.last(2).sum)
+def fibonacci(final_num)
+  return [] if final_num <= 0
+  return [0] if final_num == 1
+
+  numbers = [0, 1]
+  (2..final_num).each do |num|
+    numbers.push(numbers[-1] + numbers[-2])
   end
-  fib_arr
+  numbers
 end
